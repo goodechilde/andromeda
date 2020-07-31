@@ -2,6 +2,12 @@
 
 namespace App;
 
+use Goodechilde\CommonContact\Traits\HasAddresses;
+use Goodechilde\CommonContact\Traits\HasEmailAddresses;
+use Goodechilde\CommonContact\Traits\HasPhones;
+use Goodechilde\CommonContact\Traits\HasSocialMediaAddresses;
+use Goodechilde\GcNotes\Traits\HasNotes;
+use Goodechilde\GcTags\Traits\HasTags;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -9,6 +15,12 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasNotes;
+    use HasAddresses;
+    use HasPhones;
+    use HasEmailAddresses;
+    use HasSocialMediaAddresses;
+    use HasTags;
 
     /**
      * The attributes that are mass assignable.
