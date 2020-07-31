@@ -1,0 +1,7 @@
+grumphp:
+  tasks:
+    phpcs: ~
+    psalm:
+      config: psalm.xml
+      ignore_patterns: ['database', 'tests']
+
