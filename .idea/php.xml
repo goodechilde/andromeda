@@ -138,8 +138,6 @@
       <path value="$PROJECT_DIR$/vendor/windwalker/renderer" />
       <path value="$PROJECT_DIR$/vendor/windwalker/structure" />
       <path value="$PROJECT_DIR$/vendor/mpociot/reflection-docblock" />
-      <path value="$PROJECT_DIR$/vendor/mpociot/documentarian" />
-      <path value="$PROJECT_DIR$/vendor/mpociot/laravel-apidoc-generator" />
       <path value="$PROJECT_DIR$/vendor/php-di/invoker" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
       <path value="$PROJECT_DIR$/vendor/mnapoli/silly" />
@@ -166,6 +164,19 @@
       <path value="$PROJECT_DIR$/vendor/pragmarx/yaml" />
       <path value="$PROJECT_DIR$/vendor/phlak/semver" />
       <path value="$PROJECT_DIR$/vendor/jq/cray" />
+      <path value="$PROJECT_DIR$/vendor/giggsey/libphonenumber-for-php" />
+      <path value="$PROJECT_DIR$/vendor/propaganistas/laravel-phone" />
+      <path value="$PROJECT_DIR$/vendor/giggsey/locale" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/vendor/league/iso3166" />
+      <path value="$PROJECT_DIR$/vendor/wildside/userstamps" />
+      <path value="$PROJECT_DIR$/vendor/goodechilde/arche" />
+      <path value="$PROJECT_DIR$/vendor/goodechilde/common-contact" />
+      <path value="$PROJECT_DIR$/vendor/shalvah/clara" />
+      <path value="$PROJECT_DIR$/vendor/knuckleswtf/scribe" />
+      <path value="$PROJECT_DIR$/vendor/knuckleswtf/pastel" />
+      <path value="$PROJECT_DIR$/vendor/goodechilde/gc-tags" />
+      <path value="$PROJECT_DIR$/vendor/goodechilde/gc-notes" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
