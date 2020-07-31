@@ -8,6 +8,9 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class ProductIndexService
 {
+    /**
+     * @psalm-suppress PossiblyInvalidMethodCall
+     */
     public function handle(): LengthAwarePaginator
     {
         return QueryBuilder::for(Product::class)
@@ -15,6 +18,6 @@ class ProductIndexService
                     ->allowedSorts([])
                     ->allowedIncludes([])
                     ->paginate()
-                    ->appends(request()->query());
+                    ->appends(request()->query() ? : '');
     }
 }

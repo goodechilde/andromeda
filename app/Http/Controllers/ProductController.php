@@ -51,10 +51,9 @@ class ProductController extends Controller
      * @return ProductResource
      */
     public function store(
-            ProductStoreRequest $request,
-            ProductStoreService $service
-        ): ProductResource
-    {
+        ProductStoreRequest $request,
+        ProductStoreService $service
+    ): ProductResource {
         $product = $service->handle($request);
         return new ProductResource(
             $product
@@ -83,11 +82,10 @@ class ProductController extends Controller
      * @return ProductResource
      */
     public function update(
-            ProductUpdateRequest $request,
-            ProductUpdateService $service,
-            Product $product
-        ): ProductResource
-    {
+        ProductUpdateRequest $request,
+        ProductUpdateService $service,
+        Product $product
+    ): ProductResource {
         $product = $service->handle($product, $request);
         return new ProductResource(
             $product
@@ -98,7 +96,9 @@ class ProductController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Product $product
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     *
+     * @return Response
+     *
      * @throws \Exception
      */
     public function destroy(Product $product): Response

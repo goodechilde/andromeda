@@ -23,6 +23,8 @@ class ProductUpdateRequest extends FormRequest
      * Get the validation rules that apply to the request.
      *
      * @return array
+     * @psalm-suppress PossiblyInvalidMethodCall
+     * @psalm-suppress PossiblyNullReference
      */
     public function rules()
     {
@@ -46,5 +48,4 @@ class ProductUpdateRequest extends FormRequest
             ], Response::HTTP_UNPROCESSABLE_ENTITY),
         );
     }
-
 }

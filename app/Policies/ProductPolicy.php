@@ -40,7 +40,8 @@ class ProductPolicy
             return $viewAny;
         }
 
-        return $user->id === $product->id || has_permission($user, $permission);;
+        return $user->id === $product->id || has_permission($user, $permission);
+        ;
     }
 
     /**

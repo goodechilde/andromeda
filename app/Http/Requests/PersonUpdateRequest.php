@@ -23,7 +23,7 @@ class PersonUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        $id = $this->route()->parameter('person')->id;
+//        $id = $this->route()->parameter('person')->id;
 
         /**
          * Usage of id
@@ -31,7 +31,17 @@ class PersonUpdateRequest extends FormRequest
          */
 
         return [
-            'id' => 'required|unique:people,id,' . $id,
+//            'id' => 'required|unique:people,id,' . $id,
+            'preferred_name' => 'string',
+            'first_name' => 'required|string',
+            'middle_name' => 'string',
+            'last_name' => 'string',
+            'title' => 'string',
+            'suffix' => 'string',
+            'professional_title' => 'string',
+            'preferred_language' => 'string',
+            'date_of_birth' => 'string',
+            'person_type_id' => 'int',
         ];
     }
 }
