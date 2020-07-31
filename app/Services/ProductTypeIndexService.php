@@ -18,6 +18,6 @@ class ProductTypeIndexService
                     ->allowedSorts([])
                     ->allowedIncludes([])
                     ->paginate()
-                    ->appends(request()->query());
+                    ->appends(request()->query() ? : '');
     }
 }

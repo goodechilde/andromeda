@@ -55,10 +55,9 @@ class ProductTypeController extends Controller
      * @return ProductTypeResource
      */
     public function store(
-            ProductTypeStoreRequest $request,
-            ProductTypeStoreService $service
-        ): ProductTypeResource
-    {
+        ProductTypeStoreRequest $request,
+        ProductTypeStoreService $service
+    ): ProductTypeResource {
         $product_type = $service->handle($request);
         return new ProductTypeResource(
             $product_type
@@ -87,11 +86,10 @@ class ProductTypeController extends Controller
      * @return ProductTypeResource
      */
     public function update(
-            ProductTypeUpdateRequest $request,
-            ProductTypeUpdateService $service,
-            ProductType $product_type
-        ): ProductTypeResource
-    {
+        ProductTypeUpdateRequest $request,
+        ProductTypeUpdateService $service,
+        ProductType $product_type
+    ): ProductTypeResource {
         $product_type = $service->handle($product_type, $request);
         return new ProductTypeResource(
             $product_type
@@ -102,7 +100,9 @@ class ProductTypeController extends Controller
      * Remove the specified dummyModel resource from storage.
      *
      * @param ProductType $product_type
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     *
+     * @return Response
+     *
      * @throws \Exception
      */
     public function destroy(ProductType $product_type): Response

@@ -15,6 +15,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/serialization" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/sync" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/asm89/stack-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/binarycabin/laravel-uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/davidhsianturi/laravel-compass" />
@@ -176,6 +177,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/glob" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/path-util" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/webpatser/laravel-uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/wildside/userstamps" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/windwalker/renderer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/windwalker/structure" />

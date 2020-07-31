@@ -20,3 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('people', 'PersonController');
 Route::apiResource('products', 'ProductController');
+Route::get('utility/producttypes', 'ProductTypeController@index');
+Route::get('utility/producttypes/{product_type}', 'ProductTypeController@show');
+
+Route::group(['middleware' => ['role:super-admin']], function () {
+    Route::post('utility/producttypes', 'ProductTypeController@store');
+    Route::put('utility/producttypes/{product_type}', 'ProductTypeController@update');
+    Route::delete('utility/producttypes/{product_type}', 'ProductTypeController@delete');
+});

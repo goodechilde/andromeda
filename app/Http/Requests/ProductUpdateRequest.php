@@ -28,15 +28,10 @@ class ProductUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        $id = $this->route()->parameter('product')->id;
-
-        /**
-         * Usage of id
-         * 'username' => 'required|unique:users,username,' . $id,
-         */
-
         return [
-            'id' => 'required|unique:products,id,' . $id,
+            'name' => 'required|string',
+            'barcode' => 'string',
+            'sku' => 'string',
         ];
     }
 

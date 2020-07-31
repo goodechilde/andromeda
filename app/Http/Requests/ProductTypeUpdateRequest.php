@@ -28,7 +28,7 @@ class ProductTypeUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        $id = $this->route()->parameter('product_type')->id;
+//        $id = $this->route()->parameter('product_type')->id;
 
         /**
          * Usage of id
@@ -36,7 +36,8 @@ class ProductTypeUpdateRequest extends FormRequest
          */
 
         return [
-            'id' => 'required|unique:product_types,id,' . $id,
+//            'id' => 'required|unique:product_types,id,' . $id,
+            'name' => 'required|string'
         ];
     }
 
@@ -48,5 +49,4 @@ class ProductTypeUpdateRequest extends FormRequest
             ], Response::HTTP_UNPROCESSABLE_ENTITY),
         );
     }
-
 }

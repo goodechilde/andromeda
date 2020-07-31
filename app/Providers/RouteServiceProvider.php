@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Ramsey\Uuid\Uuid;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -33,8 +34,14 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
-        Route::bind('product', function($value) {
-            return \App\Product::where('id', $value)->orWhere('uuid', $value)->orWhere('slug', $value)->first();
+        Route::bind('product', function ($value) {
+            if (is_int($value)) {
+                return \App\Product::where('id', $value)->first();
+            }
+            if (Uuid::isValid($value)) {
+                return \App\Product::where('external_id', $value)->first();
+            }
+            return \App\Product::where('slug', $value)->first();
         });
     }
 

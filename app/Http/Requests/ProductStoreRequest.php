@@ -27,7 +27,9 @@ class ProductStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string',
+            'barcode' => 'string',
+            'sku' => 'string',
         ];
     }
 
