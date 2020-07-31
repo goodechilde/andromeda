@@ -13,6 +13,7 @@ This is a base Laravel 7 install that includes basics that I use for all project
 - <a href="https://davidhsianturi.com/laravel-compass/installation/">Laravel Compass </a>
 - <a href="https://laravel.com/docs/7.x/passport#installation">Laravel Passport </a>
 - <a href="https://laravel.com/docs/7.x/frontend">Laravel UI Scaffold </a>
+- <a href="https://github.com/WildsideUK/Laravel-Userstamps">WildsideUK Laravel UserStamps </a>
 - <a href="https://github.com/goodechilde/common-contact">Goodechilde Common Contact</a>
 - <a href="https://github.com/goodechilde/gc-notes">Goodechilde Notes</a>
 - <a href="https://github.com/goodechilde/gc-tags">Goodechilde Tags</a>
@@ -52,4 +53,17 @@ Select the frontend scaffold you want
 ```bash
 php artisan ui react --auth or php artisan ui vue --auth
 npm install && npm run dev
+```
+
+Possible Traits to add to models
+```bash
+use Userstamps;
+use HasNotes;
+use HasAddresses;
+use HasPhones;
+use HasEmailAddresses;
+use HasSocialMediaAddresses;
+use HasTags;
+use HasRoles;
+use HasApiTokens;
 ```

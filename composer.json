@@ -21,7 +21,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "mbarlow/laravel-response-helpers": "^1.0",
-        "spatie/laravel-query-builder": "^2.8"
+        "spatie/laravel-query-builder": "^2.8",
+        "wildside/userstamps": "^2.0"
     },
     "require-dev": {
         "ambersive/packagemaker": "^0.2.0",
