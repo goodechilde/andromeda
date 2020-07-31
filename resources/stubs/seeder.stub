@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+
+class DummyClass extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        factory(DummyModel::class, 25)->create();
+
+        Permission::create(['name' => 'view DummyPlural']);
+        Permission::create(['name' => 'viewAny DummyPlural']);
+        Permission::create(['name' => 'create DummyPlural']);
+        Permission::create(['name' => 'update DummyPlural']);
+        Permission::create(['name' => 'delete DummyPlural']);
+
+        Role::findByName('super-admin')->givePermissionTo(Permission::all());
+
+        // this can be done as separate statements
+        Role::findByName('administrator')->givePermissionTo(Permission::all());
+
+        // or may be done by chaining
+        Role::findByName('basic user')->givePermissionTo(['viewAny DummyPlural', 'view DummyPlural']);
+    }
+}
