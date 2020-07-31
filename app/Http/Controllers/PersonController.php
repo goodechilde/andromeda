@@ -20,6 +20,12 @@ use Illuminate\Http\Response;
 
 class PersonController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Person::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +34,7 @@ class PersonController extends Controller
      */
     public function index(PersonIndexService $service): AnonymousResourceCollection
     {
-        $this->authorize('viewAny', Person::class);
+//        $this->authorize('viewAny', Person::class);
 
         $person = $service->handle();
         return PersonResource::collection($person);
@@ -46,7 +52,7 @@ class PersonController extends Controller
         PersonStoreRequest $request,
         PersonStoreService $service
     ): PersonResource {
-        $this->authorize('create', Person::class);
+//        $this->authorize('create', Person::class);
 
         $person = $service->handle($request);
         return new PersonResource(
@@ -62,7 +68,7 @@ class PersonController extends Controller
      */
     public function show(Person $person): PersonResource
     {
-        $this->authorize('view', $person);
+//        $this->authorize('view', $person);
 
         return new PersonResource(
             $person
@@ -82,7 +88,7 @@ class PersonController extends Controller
         PersonUpdateService $service,
         Person $person
     ): PersonResource {
-        $this->authorize('update', $person);
+//        $this->authorize('update', $person);
 
         $person = $service->handle($person, $request);
         return new PersonResource(
@@ -101,7 +107,7 @@ class PersonController extends Controller
      */
     public function destroy(Person $person): Response
     {
-        $this->authorize('delete', $person);
+//        $this->authorize('delete', $person);
 
         $person->delete();
         return noContent();

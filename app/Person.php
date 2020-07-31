@@ -53,5 +53,4 @@ class Person extends Model
             $this->preferred_name . ' ' . $this->last_name :
             $this->last_name . ' ' . $this->last_name;
     }
-
 }
