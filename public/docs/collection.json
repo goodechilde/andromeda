@@ -1,0 +1,227 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Andromeda API",
+        "_postman_id": "d36dbdf0-6d96-4b72-b96a-a84e8d52a0c4",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Person management",
+            "description": "\nAPIs for managing Person",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/people",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/people"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/people",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/people"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"preferred_name\": \"modi\",\n    \"first_name\": \"provident\",\n    \"middle_name\": \"atque\",\n    \"last_name\": \"eligendi\",\n    \"title\": \"rem\",\n    \"suffix\": \"veritatis\",\n    \"professional_title\": \"ipsam\",\n    \"preferred_language\": \"non\",\n    \"date_of_birth\": \"hic\",\n    \"person_type_id\": 8\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/people\/:person",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/people\/:person"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/people\/:person",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/people\/:person"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"preferred_name\": \"dolorem\",\n    \"first_name\": \"qui\",\n    \"middle_name\": \"dolorem\",\n    \"last_name\": \"corporis\",\n    \"title\": \"ipsa\",\n    \"suffix\": \"aliquam\",\n    \"professional_title\": \"amet\",\n    \"preferred_language\": \"eos\",\n    \"date_of_birth\": \"cupiditate\",\n    \"person_type_id\": 5\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/people\/:person",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/people\/:person"
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

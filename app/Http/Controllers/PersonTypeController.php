@@ -28,8 +28,6 @@ class PersonTypeController extends Controller
      */
     public function index(PersonTypeIndexService $service): AnonymousResourceCollection
     {
-        $this->authorize('viewAny', PersonType::class);
-
         $person_type = $service->handle();
         return PersonTypeResource::collection($person_type);
     }
@@ -46,8 +44,6 @@ class PersonTypeController extends Controller
         PersonTypeStoreRequest $request,
         PersonTypeStoreService $service
     ): PersonTypeResource {
-        $this->authorize('create', PersonType::class);
-
         $person_type = $service->handle($request);
         return new PersonTypeResource(
             $person_type
@@ -62,8 +58,6 @@ class PersonTypeController extends Controller
      */
     public function show(PersonType $person_type): PersonTypeResource
     {
-        $this->authorize('view', $person_type);
-
         return new PersonTypeResource(
             $person_type
         );
@@ -82,8 +76,6 @@ class PersonTypeController extends Controller
         PersonTypeUpdateService $service,
         PersonType $person_type
     ): PersonTypeResource {
-        $this->authorize('update', $person_type);
-
         $person_type = $service->handle($person_type, $request);
         return new PersonTypeResource(
             $person_type
@@ -101,8 +93,6 @@ class PersonTypeController extends Controller
      */
     public function destroy(PersonType $person_type): Response
     {
-        $this->authorize('delete', $person_type);
-
         $person_type->delete();
         return noContent();
     }

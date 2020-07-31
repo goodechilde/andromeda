@@ -27,22 +27,25 @@ class PersonController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the person resource.
+     * @queryParam sort Field to sort by. Defaults to 'id'.
+     * @queryParam fields[person] Comma-separated fields to include in the response
+     * @queryParam filters[first_name] Filter by first name.
+     * @queryParam filters[last_name] Filter by last name.
+     * @queryParam include Include related information, accepted values 'addresses','emailaddresses','phones','socialmediaaddresses','notes','tags'.
      *
      * @param PersonIndexService $service
      * @return AnonymousResourceCollection
      */
     public function index(PersonIndexService $service): AnonymousResourceCollection
     {
-//        $this->authorize('viewAny', Person::class);
-
         $person = $service->handle();
         return PersonResource::collection($person);
     }
 
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created person resource in storage.
      *
      * @param PersonStoreRequest $request
      * @param PersonStoreService $service
@@ -51,9 +54,8 @@ class PersonController extends Controller
     public function store(
         PersonStoreRequest $request,
         PersonStoreService $service
-    ): PersonResource {
-//        $this->authorize('create', Person::class);
-
+    ): PersonResource
+    {
         $person = $service->handle($request);
         return new PersonResource(
             $person
@@ -61,22 +63,20 @@ class PersonController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified person resource.
      *
      * @param Person $person
      * @return PersonResource
      */
     public function show(Person $person): PersonResource
     {
-//        $this->authorize('view', $person);
-
         return new PersonResource(
             $person
         );
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified person resource in storage.
      *
      * @param PersonUpdateRequest $request
      * @param PersonUpdateService $service
@@ -87,9 +87,8 @@ class PersonController extends Controller
         PersonUpdateRequest $request,
         PersonUpdateService $service,
         Person $person
-    ): PersonResource {
-//        $this->authorize('update', $person);
-
+    ): PersonResource
+    {
         $person = $service->handle($person, $request);
         return new PersonResource(
             $person
@@ -97,7 +96,7 @@ class PersonController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified person resource from storage.
      *
      * @param Person $person
      *
@@ -107,8 +106,6 @@ class PersonController extends Controller
      */
     public function destroy(Person $person): Response
     {
-//        $this->authorize('delete', $person);
-
         $person->delete();
         return noContent();
     }

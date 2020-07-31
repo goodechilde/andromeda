@@ -32,6 +32,11 @@ class ProductController extends Controller
 
     /**
      * Display a listing of the resource.
+     * @queryParam sort Field to sort by. Defaults to 'id'.
+     * @queryParam fields[product] Comma-separated fields to include in the response
+     * @queryParam filters[name] Filter by first name.
+     * @queryParam filters[sku] Filter by last name.
+     * @queryParam include Include related information, accepted values.
      *
      * @param ProductIndexService $service
      * @return AnonymousResourceCollection
