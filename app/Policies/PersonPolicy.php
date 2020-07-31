@@ -40,7 +40,8 @@ class PersonPolicy
             return $viewAny;
         }
 
-        return $user->id === $person->id || has_permission($user, $permission);;
+        return $user->id === $person->id || has_permission($user, $permission);
+        ;
     }
 
     /**

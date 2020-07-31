@@ -43,10 +43,9 @@ class PersonController extends Controller
      * @return PersonResource
      */
     public function store(
-            PersonStoreRequest $request,
-            PersonStoreService $service
-        ): PersonResource
-    {
+        PersonStoreRequest $request,
+        PersonStoreService $service
+    ): PersonResource {
         $this->authorize('create', Person::class);
 
         $person = $service->handle($request);
@@ -79,11 +78,10 @@ class PersonController extends Controller
      * @return PersonResource
      */
     public function update(
-            PersonUpdateRequest $request,
-            PersonUpdateService $service,
-            Person $person
-        ): PersonResource
-    {
+        PersonUpdateRequest $request,
+        PersonUpdateService $service,
+        Person $person
+    ): PersonResource {
         $this->authorize('update', $person);
 
         $person = $service->handle($person, $request);
@@ -96,7 +94,9 @@ class PersonController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Person $person
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     *
+     * @return Response
+     *
      * @throws \Exception
      */
     public function destroy(Person $person): Response

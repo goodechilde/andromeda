@@ -17,7 +17,7 @@ abstract class ResponseCaseMiddleware
      * @param $data
      * @return array
      */
-    public function convertKeysToCase(string $case, $data): array
+    public function convertKeysToCase(string $case, array $data): array
     {
         if (!is_array($data)) {
             return $data;
