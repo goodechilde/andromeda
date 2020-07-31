@@ -33,6 +33,9 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+        Route::bind('product', function($value) {
+            return \App\Product::where('id', $value)->orWhere('uuid', $value)->orWhere('slug', $value)->first();
+        });
     }
 
     /**

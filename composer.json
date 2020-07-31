@@ -23,6 +23,7 @@
         "laravel/ui": "^2.1",
         "mbarlow/laravel-response-helpers": "^1.0",
         "spatie/laravel-query-builder": "^2.8",
+        "spatie/laravel-sluggable": "^2.5",
         "wildside/userstamps": "^2.0"
     },
     "require-dev": {

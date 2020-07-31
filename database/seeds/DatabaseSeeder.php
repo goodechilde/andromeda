@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             ContactTypeSeeder::class,
             TagTypeSeeder::class,
             PersonTypeSeeder::class,
+            ProductTypeSeeder::class,
             TagSeeder::class,
             RoleAndPermissionSeeder::class,
             UserSeeder::class,

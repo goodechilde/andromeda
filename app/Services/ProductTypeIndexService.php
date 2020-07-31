@@ -2,22 +2,22 @@
 
 namespace App\Services;
 
-use App\PersonType;
+use App\ProductType;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Spatie\QueryBuilder\QueryBuilder;
 
-class PersonTypeIndexService
+class ProductTypeIndexService
 {
     /**
      * @psalm-suppress PossiblyInvalidMethodCall
      */
     public function handle(): LengthAwarePaginator
     {
-        return QueryBuilder::for(PersonType::class)
+        return QueryBuilder::for(ProductType::class)
                     ->allowedFilters([])
                     ->allowedSorts([])
                     ->allowedIncludes([])
                     ->paginate()
-                    ->appends(request()->query() ? : '');
+                    ->appends(request()->query());
     }
 }

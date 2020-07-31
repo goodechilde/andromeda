@@ -54,8 +54,7 @@ class PersonController extends Controller
     public function store(
         PersonStoreRequest $request,
         PersonStoreService $service
-    ): PersonResource
-    {
+    ): PersonResource {
         $person = $service->handle($request);
         return new PersonResource(
             $person
@@ -87,8 +86,7 @@ class PersonController extends Controller
         PersonUpdateRequest $request,
         PersonUpdateService $service,
         Person $person
-    ): PersonResource
-    {
+    ): PersonResource {
         $person = $service->handle($person, $request);
         return new PersonResource(
             $person

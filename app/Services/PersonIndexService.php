@@ -8,6 +8,9 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class PersonIndexService
 {
+    /**
+     * @psalm-suppress PossiblyInvalidMethodCall
+     */
     public function handle(): LengthAwarePaginator
     {
         return QueryBuilder::for(Person::class)
@@ -15,6 +18,6 @@ class PersonIndexService
                     ->allowedSorts(['id','first_name','last_name'])
                     ->allowedIncludes(['addresses','emailaddresses','phones','socialmediaaddresses','notes','tags'])
                     ->paginate()
-                    ->appends(request()->query());
+                    ->appends(request()->query() ? : '');
     }
 }
