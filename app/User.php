@@ -11,6 +11,7 @@ use Goodechilde\GcTags\Traits\HasTags;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -23,6 +24,7 @@ class User extends Authenticatable
     use HasSocialMediaAddresses;
     use HasTags;
     use HasRoles;
+    use HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
