@@ -40,7 +40,8 @@ class PersonTypePolicy
             return $viewAny;
         }
 
-        return $user->id === $personType->id || has_permission($user, $permission);;
+        return $user->id === $personType->id || has_permission($user, $permission);
+        ;
     }
 
     /**

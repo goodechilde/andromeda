@@ -13,8 +13,58 @@ class PersonSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Person::class, 25)->create();
-
+        factory(App\Person::class, 500)
+            ->create()
+            ->each(function ($person) {
+                $person
+                    ->phones()
+                    ->save(
+                        factory(\Goodechilde\CommonContact\Models\Phone::class)
+                            ->make()
+                    );
+                $person
+                    ->phones()
+                    ->save(
+                        factory(\Goodechilde\CommonContact\Models\Phone::class)
+                            ->make()
+                    );
+                $person
+                    ->addresses()
+                    ->save(
+                        factory(\Goodechilde\CommonContact\Models\Address::class)
+                            ->make()
+                    );
+                $person
+                    ->emailaddresses()
+                    ->save(
+                        factory(\Goodechilde\CommonContact\Models\EmailAddress::class)
+                            ->make()
+                    );
+                $person
+                    ->emailaddresses()
+                    ->save(
+                        factory(\Goodechilde\CommonContact\Models\EmailAddress::class)
+                            ->make()
+                    );
+                $person
+                    ->socialmediaaddresses()
+                    ->save(
+                        factory(\Goodechilde\CommonContact\Models\SocialMediaAddress::class)
+                            ->make()
+                    );
+                $person
+                    ->socialmediaaddresses()
+                    ->save(
+                        factory(\Goodechilde\CommonContact\Models\SocialMediaAddress::class)
+                            ->make()
+                    );
+                $person
+                    ->notes()
+                    ->save(
+                        factory(\Goodechilde\GcNotes\Models\Note::class)
+                            ->make()
+                    );
+            });
         Permission::create(['name' => 'view people']);
         Permission::create(['name' => 'viewAny people']);
         Permission::create(['name' => 'create people']);
