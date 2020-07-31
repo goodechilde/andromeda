@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "00a3392a27290beb980f9b0830b6bd35",
+    "content-hash": "31b4cb05f0461f6a28a5e4074d6ee13a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -624,6 +624,287 @@
                 "laravel"
             ],
             "time": "2020-05-31T07:30:16+00:00"
+        },
+        {
+            "name": "giggsey/libphonenumber-for-php",
+            "version": "8.12.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giggsey/libphonenumber-for-php.git",
+                "reference": "fda8a51ad0769d82ce7023255e52e9c45efc1e75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/fda8a51ad0769d82ce7023255e52e9c45efc1e75",
+                "reference": "fda8a51ad0769d82ce7023255e52e9c45efc1e75",
+                "shasum": ""
+            },
+            "require": {
+                "giggsey/locale": "^1.7",
+                "php": ">=5.3.2",
+                "symfony/polyfill-mbstring": "^1.17"
+            },
+            "require-dev": {
+                "pear/pear-core-minimal": "^1.9",
+                "pear/pear_exception": "^1.0",
+                "pear/versioncontrol_git": "^0.5",
+                "phing/phing": "^2.7",
+                "php-coveralls/php-coveralls": "^1.0|^2.0",
+                "phpunit/phpunit": "^4.8.36|^5.0",
+                "symfony/console": "^2.8|^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "libphonenumber\\": "src/"
+                },
+                "exclude-from-classmap": [
+                    "/src/data/",
+                    "/src/carrier/data/",
+                    "/src/geocoding/data/",
+                    "/src/timezone/data/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Joshua Gigg",
+                    "email": "giggsey@gmail.com",
+                    "homepage": "https://giggsey.com/"
+                }
+            ],
+            "description": "PHP Port of Google's libphonenumber",
+            "homepage": "https://github.com/giggsey/libphonenumber-for-php",
+            "keywords": [
+                "geocoding",
+                "geolocation",
+                "libphonenumber",
+                "mobile",
+                "phonenumber",
+                "validation"
+            ],
+            "time": "2020-07-25T15:34:01+00:00"
+        },
+        {
+            "name": "giggsey/locale",
+            "version": "1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giggsey/Locale.git",
+                "reference": "b07f1eace8072ccc61445ad8fbd493ff9d783043"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/giggsey/Locale/zipball/b07f1eace8072ccc61445ad8fbd493ff9d783043",
+                "reference": "b07f1eace8072ccc61445ad8fbd493ff9d783043",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "pear/pear-core-minimal": "^1.9",
+                "pear/pear_exception": "^1.0",
+                "pear/versioncontrol_git": "^0.5",
+                "phing/phing": "~2.7",
+                "php-coveralls/php-coveralls": "^1.0|^2.0",
+                "phpunit/phpunit": "^4.8|^5.0",
+                "symfony/console": "^2.8|^3.0|^4.0",
+                "symfony/filesystem": "^2.8|^3.0|^4.0",
+                "symfony/finder": "^2.8|^3.0|^4.0",
+                "symfony/process": "^2.8|^3.0|^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Giggsey\\Locale\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joshua Gigg",
+                    "email": "giggsey@gmail.com",
+                    "homepage": "http://giggsey.com/"
+                }
+            ],
+            "description": "Locale functions required by libphonenumber-for-php",
+            "time": "2020-07-07T11:16:24+00:00"
+        },
+        {
+            "name": "goodechilde/common-contact",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/goodechilde/common-contact.git",
+                "reference": "9db373697626652d7fd9e63c389d6f13d04d3426"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/goodechilde/common-contact/zipball/9db373697626652d7fd9e63c389d6f13d04d3426",
+                "reference": "9db373697626652d7fd9e63c389d6f13d04d3426",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "7.*",
+                "league/iso3166": "^2.1.5",
+                "phlak/semver": "^3.2",
+                "propaganistas/laravel-phone": "^4.2",
+                "wildside/userstamps": "^2.0"
+            },
+            "require-dev": {
+                "ambersive/keepachangelog": "dev-master",
+                "illuminate/support": "7.*",
+                "laravel/framework": "7.*",
+                "orchestra/testbench": "3.8.*|4.*|5.*",
+                "php": ">=7.4",
+                "phpunit/phpunit": "^9.3@dev"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "laravel": {
+                    "providers": [
+                        "Goodechilde\\CommonContact\\CommonContactServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Goodechilde\\CommonContact\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Goodechilde Development",
+                    "email": "devs@eq8.in"
+                }
+            ],
+            "description": "Our common contact fields for people and places",
+            "time": "2020-07-30T05:03:12+00:00"
+        },
+        {
+            "name": "goodechilde/gc-notes",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/goodechilde/gc-notes.git",
+                "reference": "44dc6199d2e291d2ac7ed077e6dde7e765d3e2b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/goodechilde/gc-notes/zipball/44dc6199d2e291d2ac7ed077e6dde7e765d3e2b4",
+                "reference": "44dc6199d2e291d2ac7ed077e6dde7e765d3e2b4",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "7.*",
+                "phlak/semver": "^3.2",
+                "wildside/userstamps": "^2.0"
+            },
+            "require-dev": {
+                "ambersive/keepachangelog": "dev-master",
+                "illuminate/support": "7.*",
+                "laravel/framework": "7.*",
+                "orchestra/testbench": "3.8.*|4.*|5.*",
+                "php": ">=7.4",
+                "phpunit/phpunit": "^9.3@dev"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "laravel": {
+                    "providers": [
+                        "Goodechilde\\GcNotes\\GcNotesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Goodechilde\\GcNotes\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Goodechilde Development",
+                    "email": "devs@eq8.in"
+                }
+            ],
+            "description": "Our common notes package",
+            "time": "2020-07-30T05:03:42+00:00"
+        },
+        {
+            "name": "goodechilde/gc-tags",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/goodechilde/gc-tags.git",
+                "reference": "6575a3020c8e53df8eb11fe8f3b364be50e2b6fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/goodechilde/gc-tags/zipball/6575a3020c8e53df8eb11fe8f3b364be50e2b6fa",
+                "reference": "6575a3020c8e53df8eb11fe8f3b364be50e2b6fa",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "7.*",
+                "phlak/semver": "^3.2",
+                "wildside/userstamps": "^2.0"
+            },
+            "require-dev": {
+                "ambersive/keepachangelog": "dev-master",
+                "illuminate/support": "7.*",
+                "laravel/framework": "7.*",
+                "orchestra/testbench": "3.8.*|4.*|5.*",
+                "php": ">=7.4",
+                "phpunit/phpunit": "^9.3@dev"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "laravel": {
+                    "providers": [
+                        "Goodechilde\\GcTags\\GcTagsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Goodechilde\\GcTags\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Goodechilde Development",
+                    "email": "devs@eq8.in"
+                }
+            ],
+            "description": "Our common tags package",
+            "time": "2020-07-30T05:04:18+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1629,6 +1910,60 @@
             "time": "2020-05-18T15:13:39+00:00"
         },
         {
+            "name": "league/iso3166",
+            "version": "2.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/iso3166.git",
+                "reference": "aed3b32fc293afdf2c6c6a322c2408eb5d20804a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/iso3166/zipball/aed3b32fc293afdf2c6c6a322c2408eb5d20804a",
+                "reference": "aed3b32fc293afdf2c6c6a322c2408eb5d20804a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.12",
+                "phpunit/phpunit": "^5.7.11 || ^6.0 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\ISO3166\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com"
+                }
+            ],
+            "description": "ISO 3166-1 PHP Library",
+            "homepage": "https://github.com/thephpleague/iso3166",
+            "keywords": [
+                "3166",
+                "3166-1",
+                "ISO 3166",
+                "countries",
+                "iso",
+                "library"
+            ],
+            "time": "2020-01-29T07:08:12+00:00"
+        },
+        {
             "name": "league/oauth2-server",
             "version": "8.1.1",
             "source": {
@@ -2127,6 +2462,51 @@
             "time": "2018-07-02T15:55:56+00:00"
         },
         {
+            "name": "phlak/semver",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHLAK/SemVer.git",
+                "reference": "2167230f819d43d565194e2e91d69a1fa110c3df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHLAK/SemVer/zipball/2167230f819d43d565194e2e91d69a1fa110c3df",
+                "reference": "2167230f819d43d565194e2e91d69a1fa110c3df",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16.1",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "psy/psysh": "^0.10",
+                "vimeo/psalm": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHLAK\\SemVer\\": "src/"
+                },
+                "files": [
+                    "src/Support/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Kankiewicz",
+                    "email": "Chris@ChrisKankiewicz.com"
+                }
+            ],
+            "description": "Semantic versioning helper library",
+            "time": "2020-04-10T17:31:42+00:00"
+        },
+        {
             "name": "php-http/message-factory",
             "version": "v1.0.2",
             "source": {
@@ -2322,6 +2702,67 @@
                 "x509"
             ],
             "time": "2020-07-08T09:08:33+00:00"
+        },
+        {
+            "name": "propaganistas/laravel-phone",
+            "version": "4.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Propaganistas/Laravel-Phone.git",
+                "reference": "e207b24c3d51623aaceda784c6ba0a7b9d9de2f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/e207b24c3d51623aaceda784c6ba0a7b9d9de2f9",
+                "reference": "e207b24c3d51623aaceda784c6ba0a7b9d9de2f9",
+                "shasum": ""
+            },
+            "require": {
+                "giggsey/libphonenumber-for-php": "^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0",
+                "illuminate/validation": "^6.0|^7.0",
+                "league/iso3166": "^2.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "*",
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Propaganistas\\LaravelPhone\\PhoneServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Propaganistas\\LaravelPhone\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Propaganistas",
+                    "email": "Propaganistas@users.noreply.github.com"
+                }
+            ],
+            "description": "Adds phone number functionality to Laravel and Lumen based on Google's libphonenumber API.",
+            "keywords": [
+                "laravel",
+                "libphonenumber",
+                "lumen",
+                "phone",
+                "validation"
+            ],
+            "time": "2020-06-22T06:43:41+00:00"
         },
         {
             "name": "psr/container",
@@ -4951,6 +5392,57 @@
                 "php"
             ],
             "time": "2020-06-15T23:49:30+00:00"
+        },
+        {
+            "name": "wildside/userstamps",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WildsideUK/Laravel-Userstamps.git",
+                "reference": "4176b799bc31ca961a85a485cbd922163dcc4a7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WildsideUK/Laravel-Userstamps/zipball/4176b799bc31ca961a85a485cbd922163dcc4a7f",
+                "reference": "4176b799bc31ca961a85a485cbd922163dcc4a7f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.2|^6.0|^7.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "illuminate/database": "^5.2|^6.0|^7.0",
+                "orchestra/testbench": "^3.1|^4.0|^5.0",
+                "phpunit/phpunit": "^5.0|^6.0|^7.0|^8.4|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wildside\\Userstamps\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WILDSIDE",
+                    "email": "hello@wildside.uk",
+                    "homepage": "https://wildside.uk"
+                }
+            ],
+            "description": "Laravel Userstamps provides an Eloquent trait which automatically maintains `created_by` and `updated_by` columns on your model, populated by the currently authenticated user in your application.",
+            "keywords": [
+                "created_by",
+                "deleted_by",
+                "eloquent",
+                "laravel",
+                "updated_by",
+                "userstamps"
+            ],
+            "time": "2020-03-09T16:54:22+00:00"
         }
     ],
     "packages-dev": [
@@ -6246,6 +6738,72 @@
             "time": "2020-03-23T12:43:44+00:00"
         },
         {
+            "name": "goodechilde/arche",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/goodechilde/arche.git",
+                "reference": "7ba04c08c12ad34ff45a541d3faa24f824e95623"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/goodechilde/arche/zipball/7ba04c08c12ad34ff45a541d3faa24f824e95623",
+                "reference": "7ba04c08c12ad34ff45a541d3faa24f824e95623",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6.0|^7.0",
+                "php": "^7.2",
+                "spatie/laravel-permission": "^3.13",
+                "spatie/laravel-query-builder": "^2.8"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0|^5.0",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Goodechilde\\Arche\\ArcheServiceProvider"
+                    ],
+                    "aliases": {
+                        "Arche": "Goodechilde\\Arche\\ArcheFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Goodechilde\\Arche\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Goodechilde Productions",
+                    "email": "devs@eq8.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package to help you generate APIScaffolding!",
+            "homepage": "https://github.com/goodechilde/apiscaffold",
+            "keywords": [
+                "apiscaffold",
+                "code generator",
+                "generate",
+                "generate code",
+                "goodechilde",
+                "scaffold"
+            ],
+            "time": "2020-07-31T03:22:14+00:00"
+        },
+        {
             "name": "hamcrest/hamcrest-php",
             "version": "v2.0.0",
             "source": {
@@ -6421,6 +6979,141 @@
             "time": "2020-07-13T11:05:52+00:00"
         },
         {
+            "name": "knuckleswtf/pastel",
+            "version": "1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/knuckleswtf/pastel.git",
+                "reference": "2370abc192a1e9009bb8245fcf12a3be53f8f857"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/knuckleswtf/pastel/zipball/2370abc192a1e9009bb8245fcf12a3be53f8f857",
+                "reference": "2370abc192a1e9009bb8245fcf12a3be53f8f857",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/view": "^6.0|^7.0|^8.0",
+                "mnapoli/front-yaml": "^1.7.0",
+                "mnapoli/silly": "~1.0",
+                "php": ">=7.2.5",
+                "shalvah/clara": "^2.0.0",
+                "windwalker/renderer": "3.*"
+            },
+            "replace": {
+                "mpociot/documentarian": "*"
+            },
+            "require-dev": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "league/flysystem": "^2.0@dev",
+                "phpstan/phpstan": "^0.12.23",
+                "phpunit/phpunit": "^9.1"
+            },
+            "bin": [
+                "pastel"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "Knuckles\\Pastel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Write your API docs in Markdown and get them converted into pretty HTML🎨",
+            "keywords": [
+                "documentation",
+                "generation",
+                "markdown"
+            ],
+            "time": "2020-07-14T19:34:24+00:00"
+        },
+        {
+            "name": "knuckleswtf/scribe",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/knuckleswtf/scribe.git",
+                "reference": "7e588d52cfd09588ab15e58a051f67a8d35d9bda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/knuckleswtf/scribe/zipball/7e588d52cfd09588ab15e58a051f67a8d35d9bda",
+                "reference": "7e588d52cfd09588ab15e58a051f67a8d35d9bda",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "^1.7.4",
+                "ext-json": "*",
+                "fzaninotto/faker": "^1.9.1",
+                "illuminate/console": "^5.8|^6.0|^7.0",
+                "illuminate/routing": "^5.8|^6.0|^7.0",
+                "illuminate/support": "^5.8|^6.0|^7.0",
+                "knuckleswtf/pastel": "^1.3.3",
+                "league/flysystem": "^1.0",
+                "mpociot/reflection-docblock": "^1.0.1",
+                "nunomaduro/collision": "^3.0|^4.0|^5.0",
+                "php": ">=7.2.5",
+                "ramsey/uuid": "^3.8|^4.0",
+                "shalvah/clara": "^2.6",
+                "symfony/var-exporter": "^4.0|^5.0"
+            },
+            "replace": {
+                "mpociot/laravel-apidoc-generator": "*"
+            },
+            "require-dev": {
+                "brianium/paratest": "^4.0",
+                "dms/phpunit-arraysubset-asserts": "^0.1.0",
+                "laravel/lumen-framework": "^5.7|^6.0|^7.0",
+                "league/fractal": "^0.19.0",
+                "orchestra/testbench": "^3.7|^4.0|^5.0",
+                "phpstan/phpstan": "^0.12.19",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "suggest": {
+                "league/fractal": "Required for transformers support"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Knuckles\\Scribe\\ScribeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knuckles\\Scribe\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shalvah",
+                    "email": "hello@shalvah.me"
+                }
+            ],
+            "description": "Generate API documentation for humans from your Laravel codebase.✍",
+            "homepage": "http://github.com/knuckleswtf/scribe",
+            "keywords": [
+                "api",
+                "dingo",
+                "documentation",
+                "laravel"
+            ],
+            "time": "2020-07-17T01:23:59+00:00"
+        },
+        {
             "name": "mnapoli/front-yaml",
             "version": "1.7.0",
             "source": {
@@ -6568,128 +7261,6 @@
                 "testing"
             ],
             "time": "2020-05-19T14:25:16+00:00"
-        },
-        {
-            "name": "mpociot/documentarian",
-            "version": "0.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mpociot/documentarian.git",
-                "reference": "c7dc266b6646a49f82b304a3451e41161cc4b1c3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mpociot/documentarian/zipball/c7dc266b6646a49f82b304a3451e41161cc4b1c3",
-                "reference": "c7dc266b6646a49f82b304a3451e41161cc4b1c3",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/view": "5.*|^6.0|^7.0",
-                "mnapoli/front-yaml": "^1.5",
-                "mnapoli/silly": "~1.0",
-                "php": ">=5.5.9",
-                "windwalker/renderer": "3.*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8"
-            },
-            "bin": [
-                "documentarian"
-            ],
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "includes/helpers.php"
-                ],
-                "psr-4": {
-                    "Mpociot\\Documentarian\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache 2"
-            ],
-            "authors": [
-                {
-                    "name": "Marcel Pociot",
-                    "email": "m.pociot@gmail.com"
-                }
-            ],
-            "time": "2020-03-06T07:31:21+00:00"
-        },
-        {
-            "name": "mpociot/laravel-apidoc-generator",
-            "version": "4.8.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mpociot/laravel-apidoc-generator.git",
-                "reference": "9015d39020dc1d7e80b0cd012bc1e999fd2542ca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mpociot/laravel-apidoc-generator/zipball/9015d39020dc1d7e80b0cd012bc1e999fd2542ca",
-                "reference": "9015d39020dc1d7e80b0cd012bc1e999fd2542ca",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "fzaninotto/faker": "^1.8",
-                "illuminate/console": "^5.7|^6.0|^7.0",
-                "illuminate/routing": "^5.7|^6.0|^7.0",
-                "illuminate/support": "^5.7|^6.0|^7.0",
-                "league/flysystem": "^1.0",
-                "mpociot/documentarian": "^0.4.0",
-                "mpociot/reflection-docblock": "^1.0.1",
-                "nunomaduro/collision": "^3.0|^4.0",
-                "php": ">=7.2.0",
-                "ramsey/uuid": "^3.8|^4.0",
-                "symfony/var-exporter": "^4.0|^5.0"
-            },
-            "require-dev": {
-                "dms/phpunit-arraysubset-asserts": "^0.1.0",
-                "laravel/lumen-framework": "^5.7|^6.0|^7.0",
-                "league/fractal": "^0.19.0",
-                "orchestra/testbench": "^3.7|^4.0|^5.0",
-                "phpstan/phpstan": "^0.11.15",
-                "phpunit/phpunit": "^8.0"
-            },
-            "suggest": {
-                "league/fractal": "Required for transformers support"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Mpociot\\ApiDoc\\ApiDocGeneratorServiceProvider"
-                    ]
-                },
-                "branch-alias": {
-                    "dev-v4": "4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Mpociot\\ApiDoc\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marcel Pociot",
-                    "email": "m.pociot@gmail.com"
-                }
-            ],
-            "description": "Generate beautiful API documentation from your Laravel application",
-            "homepage": "http://github.com/mpociot/laravel-apidoc-generator",
-            "keywords": [
-                "api",
-                "documentation",
-                "laravel"
-            ],
-            "time": "2020-05-28T14:10:08+00:00"
         },
         {
             "name": "mpociot/reflection-docblock",
@@ -7105,51 +7676,6 @@
             ],
             "description": "Library for handling version information and constraints",
             "time": "2018-07-08T19:19:57+00:00"
-        },
-        {
-            "name": "phlak/semver",
-            "version": "3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHLAK/SemVer.git",
-                "reference": "2167230f819d43d565194e2e91d69a1fa110c3df"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHLAK/SemVer/zipball/2167230f819d43d565194e2e91d69a1fa110c3df",
-                "reference": "2167230f819d43d565194e2e91d69a1fa110c3df",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16.1",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
-                "psy/psysh": "^0.10",
-                "vimeo/psalm": "^3.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PHLAK\\SemVer\\": "src/"
-                },
-                "files": [
-                    "src/Support/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Kankiewicz",
-                    "email": "Chris@ChrisKankiewicz.com"
-                }
-            ],
-            "description": "Semantic versioning helper library",
-            "time": "2020-04-10T17:31:42+00:00"
         },
         {
             "name": "php-di/invoker",
@@ -8645,6 +9171,117 @@
             "time": "2020-04-30T19:05:18+00:00"
         },
         {
+            "name": "shalvah/clara",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shalvah/clara.git",
+                "reference": "f1d8a36da149b605769ef86286110e435a68d9ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shalvah/clara/zipball/f1d8a36da149b605769ef86286110e435a68d9ac",
+                "reference": "f1d8a36da149b605769ef86286110e435a68d9ac",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/console": "^4.0|^5.0"
+            },
+            "require-dev": {
+                "eloquent/phony-phpunit": "^7.0",
+                "phpunit/phpunit": "^9.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shalvah\\Clara\\": "src/"
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "🔊 Simple, pretty, testable console output for CLI apps.",
+            "keywords": [
+                "cli",
+                "log",
+                "logging"
+            ],
+            "time": "2020-04-12T11:08:11+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "3.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "49b8063fbb9ec52ebef98cc6ec527a80d8853141"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/49b8063fbb9ec52ebef98cc6ec527a80d8853141",
+                "reference": "49b8063fbb9ec52ebef98cc6ec527a80d8853141",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^5.8|^6.0|^7.0",
+                "illuminate/container": "^5.8|^6.0|^7.0",
+                "illuminate/contracts": "^5.8|^6.0|^7.0",
+                "illuminate/database": "^5.8|^6.0|^7.0",
+                "php": "^7.2.5"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.8|^4.0|^5.0",
+                "phpunit/phpunit": "^8.0|^9.0",
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 5.8 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "time": "2020-05-20T00:31:29+00:00"
+        },
+        {
             "name": "squizlabs/php_codesniffer",
             "version": "3.5.5",
             "source": {
@@ -9458,7 +10095,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "goodechilde/common-contact": 20,
+        "goodechilde/gc-notes": 20,
+        "goodechilde/gc-tags": 20,
+        "goodechilde/arche": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
