@@ -34,6 +34,22 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    'http://127.0.0.1:8082/api/user',
+    [
+        'headers' => [
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
 
 > Example response (401):
 

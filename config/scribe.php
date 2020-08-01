@@ -54,19 +54,19 @@ return [
          * Where is the auth value meant to be sent in a request?
          * Options: query, body, query_or_body, basic, bearer, header (for custom header)
          */
-        'in' => 'bearer',
+        'in' => 'header',
 
         /*
          * The name of the parameter (eg token, key, apiKey) or header (eg Authorization, Api-Key).
          */
-        'name' => 'token',
+        'name' => 'Authorization',
 
         /*
          * The value of the parameter to be used by Scribe to authenticate response calls.
          * This will NOT be included in the generated documentation.
          * If this value is null, Scribe will use a random value.
          */
-        'use_value' => env('SCRIBE_AUTH_KEY'),
+        'use_value' => 'bearer ' . env('SCRIBE_AUTH_KEY'),
 
         /*
          * Any extra authentication-related info for your users. For instance, you can describe how to find or generate their auth credentials.
@@ -96,6 +96,7 @@ INTRO
     'example_languages' => [
         'bash',
         'javascript',
+        'php',
     ],
 
     /*

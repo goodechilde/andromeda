@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Andromeda API",
-        "_postman_id": "d36dbdf0-6d96-4b72-b96a-a84e8d52a0c4",
+        "_postman_id": "2ab2c1be-c83c-4615-833f-7ec765707f7f",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -52,7 +52,72 @@
             "description": "\nAPIs for managing Person",
             "item": [
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "Display a listing of the person resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/people",
+                            "query": [
+                                {
+                                    "key": "sort",
+                                    "value": "deserunt",
+                                    "description": "Field to sort by. Defaults to 'id'.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "fields[person]",
+                                    "value": "autem",
+                                    "description": "Comma-separated fields to include in the response",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filters[first_name]",
+                                    "value": "eligendi",
+                                    "description": "Filter by first name.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filters[last_name]",
+                                    "value": "sapiente",
+                                    "description": "Filter by last name.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "include",
+                                    "value": "vel",
+                                    "description": "Include related information, accepted values 'addresses','emailaddresses','phones','socialmediaaddresses','notes','tags'.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/people?sort=deserunt&fields[person]=autem&filters[first_name]=eligendi&filters[last_name]=sapiente&include=vel"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a newly created person resource in storage.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -60,6 +125,346 @@
                             "path": "api\/people",
                             "query": [],
                             "raw": "http:\/\/127.0.0.1:8082\/api\/people"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"preferred_name\": \"id\",\n    \"first_name\": \"optio\",\n    \"middle_name\": \"beatae\",\n    \"last_name\": \"iste\",\n    \"title\": \"sed\",\n    \"suffix\": \"placeat\",\n    \"professional_title\": \"omnis\",\n    \"preferred_language\": \"aliquid\",\n    \"date_of_birth\": \"ad\",\n    \"person_type_id\": 2\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the specified person resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/people\/:person",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/people\/:person"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update the specified person resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/people\/:person",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/people\/:person"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"preferred_name\": \"voluptatum\",\n    \"first_name\": \"cumque\",\n    \"middle_name\": \"saepe\",\n    \"last_name\": \"consequatur\",\n    \"title\": \"est\",\n    \"suffix\": \"nostrum\",\n    \"professional_title\": \"vel\",\n    \"preferred_language\": \"ad\",\n    \"date_of_birth\": \"ea\",\n    \"person_type_id\": 19\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Remove the specified person resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/people\/:person",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/people\/:person"
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ProductType management",
+            "description": "\nAPIs for managing ProductType",
+            "item": [
+                {
+                    "name": "Display a listing of the dummyModel resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/utility\/producttypes",
+                            "query": [
+                                {
+                                    "key": "sort",
+                                    "value": "esse",
+                                    "description": "Field to sort by. Defaults to 'id'.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "fields[dummyModel]",
+                                    "value": "et",
+                                    "description": "Comma-separated fields to include in the response",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filters[INSERTFILTER]",
+                                    "value": "delectus",
+                                    "description": "Filter by INSERTFILTER.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "include",
+                                    "value": "est",
+                                    "description": "Include related information, accepted values .",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/utility\/producttypes?sort=esse&fields[dummyModel]=et&filters[INSERTFILTER]=delectus&include=est"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the specified dummyModel resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/utility\/producttypes\/:product_type",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/utility\/producttypes\/:product_type"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a newly created dummyModel resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/utility\/producttypes",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/utility\/producttypes"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"rerum\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update the specified dummyModel resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/utility\/producttypes\/:product_type",
+                            "query": [],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/utility\/producttypes\/:product_type"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"accusantium\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Product management",
+            "description": "\nAPIs for managing Product",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "127.0.0.1:8082",
+                            "path": "api\/products",
+                            "query": [
+                                {
+                                    "key": "sort",
+                                    "value": "voluptatem",
+                                    "description": "Field to sort by. Defaults to 'id'.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "fields[product]",
+                                    "value": "quasi",
+                                    "description": "Comma-separated fields to include in the response",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filters[name]",
+                                    "value": "harum",
+                                    "description": "Filter by first name.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filters[sku]",
+                                    "value": "maiores",
+                                    "description": "Filter by last name.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "include",
+                                    "value": "est",
+                                    "description": "Include related information, accepted values.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/products?sort=voluptatem&fields[product]=quasi&filters[name]=harum&filters[sku]=maiores&include=est"
                         },
                         "method": "GET",
                         "header": [
@@ -91,9 +496,9 @@
                         "url": {
                             "protocol": "http",
                             "host": "127.0.0.1:8082",
-                            "path": "api\/people",
+                            "path": "api\/products",
                             "query": [],
-                            "raw": "http:\/\/127.0.0.1:8082\/api\/people"
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/products"
                         },
                         "method": "POST",
                         "header": [
@@ -108,7 +513,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"preferred_name\": \"modi\",\n    \"first_name\": \"provident\",\n    \"middle_name\": \"atque\",\n    \"last_name\": \"eligendi\",\n    \"title\": \"rem\",\n    \"suffix\": \"veritatis\",\n    \"professional_title\": \"ipsam\",\n    \"preferred_language\": \"non\",\n    \"date_of_birth\": \"hic\",\n    \"person_type_id\": 8\n}",
+                            "raw": "{\n    \"name\": \"et\",\n    \"barcode\": \"veniam\",\n    \"sku\": \"laborum\"\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -125,9 +530,9 @@
                         "url": {
                             "protocol": "http",
                             "host": "127.0.0.1:8082",
-                            "path": "api\/people\/:person",
+                            "path": "api\/products\/:product",
                             "query": [],
-                            "raw": "http:\/\/127.0.0.1:8082\/api\/people\/:person"
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/products\/:product"
                         },
                         "method": "GET",
                         "header": [
@@ -159,9 +564,9 @@
                         "url": {
                             "protocol": "http",
                             "host": "127.0.0.1:8082",
-                            "path": "api\/people\/:person",
+                            "path": "api\/products\/:product",
                             "query": [],
-                            "raw": "http:\/\/127.0.0.1:8082\/api\/people\/:person"
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/products\/:product"
                         },
                         "method": "PUT",
                         "header": [
@@ -176,7 +581,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"preferred_name\": \"dolorem\",\n    \"first_name\": \"qui\",\n    \"middle_name\": \"dolorem\",\n    \"last_name\": \"corporis\",\n    \"title\": \"ipsa\",\n    \"suffix\": \"aliquam\",\n    \"professional_title\": \"amet\",\n    \"preferred_language\": \"eos\",\n    \"date_of_birth\": \"cupiditate\",\n    \"person_type_id\": 5\n}",
+                            "raw": "{\n    \"name\": \"beatae\",\n    \"barcode\": \"excepturi\",\n    \"sku\": \"aperiam\"\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -193,9 +598,9 @@
                         "url": {
                             "protocol": "http",
                             "host": "127.0.0.1:8082",
-                            "path": "api\/people\/:person",
+                            "path": "api\/products\/:product",
                             "query": [],
-                            "raw": "http:\/\/127.0.0.1:8082\/api\/people\/:person"
+                            "raw": "http:\/\/127.0.0.1:8082\/api\/products\/:product"
                         },
                         "method": "DELETE",
                         "header": [

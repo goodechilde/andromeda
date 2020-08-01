@@ -1,8 +1,8 @@
-# Person management
+# Product management
 
-APIs for managing Person
+APIs for managing Product
 
-## Display a listing of the person resource.
+## Display a listing of the resource.
 
 
 
@@ -11,22 +11,22 @@ APIs for managing Person
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8082/api/people?sort=deserunt&fields[person]=autem&filters[first_name]=eligendi&filters[last_name]=sapiente&include=vel" \
+    -G "http://127.0.0.1:8082/api/products?sort=voluptatem&fields[product]=quasi&filters[name]=harum&filters[sku]=maiores&include=est" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8082/api/people"
+    "http://127.0.0.1:8082/api/products"
 );
 
 let params = {
-    "sort": "deserunt",
-    "fields[person]": "autem",
-    "filters[first_name]": "eligendi",
-    "filters[last_name]": "sapiente",
-    "include": "vel",
+    "sort": "voluptatem",
+    "fields[product]": "quasi",
+    "filters[name]": "harum",
+    "filters[sku]": "maiores",
+    "include": "est",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -49,18 +49,18 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'http://127.0.0.1:8082/api/people',
+    'http://127.0.0.1:8082/api/products',
     [
         'headers' => [
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
         ],
         'query' => [
-            'sort'=> 'deserunt',
-            'fields[person]'=> 'autem',
-            'filters[first_name]'=> 'eligendi',
-            'filters[last_name]'=> 'sapiente',
-            'include'=> 'vel',
+            'sort'=> 'voluptatem',
+            'fields[product]'=> 'quasi',
+            'filters[name]'=> 'harum',
+            'filters[sku]'=> 'maiores',
+            'include'=> 'est',
         ],
     ]
 );
@@ -500,27 +500,27 @@ print_r(json_decode((string) $body));
 
 ### Request
 <small class="badge badge-green">GET</small>
- **`api/people`**
+ **`api/products`**
 
 <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
 <code><b>sort</b></code>&nbsp;          <i>optional</i>    <br>
     Field to sort by. Defaults to 'id'.
 
-<code><b>fields[person]</b></code>&nbsp;          <i>optional</i>    <br>
+<code><b>fields[product]</b></code>&nbsp;          <i>optional</i>    <br>
     Comma-separated fields to include in the response
 
-<code><b>filters[first_name]</b></code>&nbsp;          <i>optional</i>    <br>
+<code><b>filters[name]</b></code>&nbsp;          <i>optional</i>    <br>
     Filter by first name.
 
-<code><b>filters[last_name]</b></code>&nbsp;          <i>optional</i>    <br>
+<code><b>filters[sku]</b></code>&nbsp;          <i>optional</i>    <br>
     Filter by last name.
 
 <code><b>include</b></code>&nbsp;          <i>optional</i>    <br>
-    Include related information, accepted values 'addresses','emailaddresses','phones','socialmediaaddresses','notes','tags'.
+    Include related information, accepted values.
 
 
 
-## Store a newly created person resource in storage.
+## Store a newly created resource in storage.
 
 
 
@@ -529,16 +529,16 @@ print_r(json_decode((string) $body));
 
 ```bash
 curl -X POST \
-    "http://127.0.0.1:8082/api/people" \
+    "http://127.0.0.1:8082/api/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"preferred_name":"id","first_name":"optio","middle_name":"beatae","last_name":"iste","title":"sed","suffix":"placeat","professional_title":"omnis","preferred_language":"aliquid","date_of_birth":"ad","person_type_id":2}'
+    -d '{"name":"et","barcode":"veniam","sku":"laborum"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8082/api/people"
+    "http://127.0.0.1:8082/api/products"
 );
 
 let headers = {
@@ -547,16 +547,9 @@ let headers = {
 };
 
 let body = {
-    "preferred_name": "id",
-    "first_name": "optio",
-    "middle_name": "beatae",
-    "last_name": "iste",
-    "title": "sed",
-    "suffix": "placeat",
-    "professional_title": "omnis",
-    "preferred_language": "aliquid",
-    "date_of_birth": "ad",
-    "person_type_id": 2
+    "name": "et",
+    "barcode": "veniam",
+    "sku": "laborum"
 }
 
 fetch(url, {
@@ -572,23 +565,16 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->post(
-    'http://127.0.0.1:8082/api/people',
+    'http://127.0.0.1:8082/api/products',
     [
         'headers' => [
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
         ],
         'json' => [
-            'preferred_name' => 'id',
-            'first_name' => 'optio',
-            'middle_name' => 'beatae',
-            'last_name' => 'iste',
-            'title' => 'sed',
-            'suffix' => 'placeat',
-            'professional_title' => 'omnis',
-            'preferred_language' => 'aliquid',
-            'date_of_birth' => 'ad',
-            'person_type_id' => 2,
+            'name' => 'et',
+            'barcode' => 'veniam',
+            'sku' => 'laborum',
         ],
     ]
 );
@@ -1028,42 +1014,21 @@ print_r(json_decode((string) $body));
 
 ### Request
 <small class="badge badge-black">POST</small>
- **`api/people`**
+ **`api/products`**
 
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-<code><b>preferred_name</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
+<code><b>name</b></code>&nbsp; <small>string</small>     <br>
     
 
-<code><b>first_name</b></code>&nbsp; <small>string</small>     <br>
+<code><b>barcode</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
     
 
-<code><b>middle_name</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>last_name</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>title</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>suffix</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>professional_title</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>preferred_language</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>date_of_birth</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>person_type_id</b></code>&nbsp; <small>integer</small>         <i>optional</i>    <br>
+<code><b>sku</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
     
 
 
 
-## Display the specified person resource.
+## Display the specified resource.
 
 
 
@@ -1072,14 +1037,14 @@ print_r(json_decode((string) $body));
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8082/api/people/1" \
+    -G "http://127.0.0.1:8082/api/products/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8082/api/people/1"
+    "http://127.0.0.1:8082/api/products/1"
 );
 
 let headers = {
@@ -1100,7 +1065,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'http://127.0.0.1:8082/api/people/1',
+    'http://127.0.0.1:8082/api/products/1',
     [
         'headers' => [
             'Content-Type' => 'application/json',
@@ -1117,7 +1082,7 @@ print_r(json_decode((string) $body));
 
 ```json
 {
-    "message": "SQLSTATE[08006] [7] FATAL:  password authentication failed for user \"andromeda\" (SQL: select * from \"people\" where \"id\" = 1 and \"people\".\"deleted_at\" is null limit 1)",
+    "message": "SQLSTATE[08006] [7] FATAL:  password authentication failed for user \"andromeda\" (SQL: select * from \"products\" where \"slug\" = 1 and \"products\".\"deleted_at\" is null limit 1)",
     "exception": "Illuminate\\Database\\QueryException",
     "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Database\/Connection.php",
     "line": 671,
@@ -1186,30 +1151,33 @@ print_r(json_decode((string) $body));
             "type": "->"
         },
         {
-            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Database\/Eloquent\/Model.php",
-            "line": 1569,
+            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/app\/Providers\/RouteServiceProvider.php",
+            "line": 44,
             "function": "first",
             "class": "Illuminate\\Database\\Eloquent\\Builder",
             "type": "->"
         },
         {
-            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ImplicitRouteBinding.php",
-            "line": 46,
-            "function": "resolveRouteBinding",
-            "class": "Illuminate\\Database\\Eloquent\\Model",
+            "function": "App\\Providers\\{closure}",
+            "class": "App\\Providers\\RouteServiceProvider",
             "type": "->"
         },
         {
             "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 798,
-            "function": "resolveForRoute",
-            "class": "Illuminate\\Routing\\ImplicitRouteBinding",
-            "type": "::"
+            "line": 813,
+            "function": "call_user_func"
+        },
+        {
+            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 781,
+            "function": "performBinding",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
         },
         {
             "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
-            "line": 39,
-            "function": "substituteImplicitBindings",
+            "line": 37,
+            "function": "substituteBindings",
             "class": "Illuminate\\Routing\\Router",
             "type": "->"
         },
@@ -1565,11 +1533,11 @@ print_r(json_decode((string) $body));
 
 ### Request
 <small class="badge badge-green">GET</small>
- **`api/people/{person}`**
+ **`api/products/{product}`**
 
 
 
-## Update the specified person resource in storage.
+## Update the specified resource in storage.
 
 
 
@@ -1578,16 +1546,16 @@ print_r(json_decode((string) $body));
 
 ```bash
 curl -X PUT \
-    "http://127.0.0.1:8082/api/people/1" \
+    "http://127.0.0.1:8082/api/products/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"preferred_name":"voluptatum","first_name":"cumque","middle_name":"saepe","last_name":"consequatur","title":"est","suffix":"nostrum","professional_title":"vel","preferred_language":"ad","date_of_birth":"ea","person_type_id":19}'
+    -d '{"name":"beatae","barcode":"excepturi","sku":"aperiam"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8082/api/people/1"
+    "http://127.0.0.1:8082/api/products/1"
 );
 
 let headers = {
@@ -1596,16 +1564,9 @@ let headers = {
 };
 
 let body = {
-    "preferred_name": "voluptatum",
-    "first_name": "cumque",
-    "middle_name": "saepe",
-    "last_name": "consequatur",
-    "title": "est",
-    "suffix": "nostrum",
-    "professional_title": "vel",
-    "preferred_language": "ad",
-    "date_of_birth": "ea",
-    "person_type_id": 19
+    "name": "beatae",
+    "barcode": "excepturi",
+    "sku": "aperiam"
 }
 
 fetch(url, {
@@ -1621,23 +1582,16 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->put(
-    'http://127.0.0.1:8082/api/people/1',
+    'http://127.0.0.1:8082/api/products/1',
     [
         'headers' => [
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
         ],
         'json' => [
-            'preferred_name' => 'voluptatum',
-            'first_name' => 'cumque',
-            'middle_name' => 'saepe',
-            'last_name' => 'consequatur',
-            'title' => 'est',
-            'suffix' => 'nostrum',
-            'professional_title' => 'vel',
-            'preferred_language' => 'ad',
-            'date_of_birth' => 'ea',
-            'person_type_id' => 19,
+            'name' => 'beatae',
+            'barcode' => 'excepturi',
+            'sku' => 'aperiam',
         ],
     ]
 );
@@ -1650,7 +1604,7 @@ print_r(json_decode((string) $body));
 
 ```json
 {
-    "message": "SQLSTATE[08006] [7] FATAL:  password authentication failed for user \"andromeda\" (SQL: select * from \"people\" where \"id\" = 1 and \"people\".\"deleted_at\" is null limit 1)",
+    "message": "SQLSTATE[08006] [7] FATAL:  password authentication failed for user \"andromeda\" (SQL: select * from \"products\" where \"slug\" = 1 and \"products\".\"deleted_at\" is null limit 1)",
     "exception": "Illuminate\\Database\\QueryException",
     "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Database\/Connection.php",
     "line": 671,
@@ -1719,30 +1673,33 @@ print_r(json_decode((string) $body));
             "type": "->"
         },
         {
-            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Database\/Eloquent\/Model.php",
-            "line": 1569,
+            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/app\/Providers\/RouteServiceProvider.php",
+            "line": 44,
             "function": "first",
             "class": "Illuminate\\Database\\Eloquent\\Builder",
             "type": "->"
         },
         {
-            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ImplicitRouteBinding.php",
-            "line": 46,
-            "function": "resolveRouteBinding",
-            "class": "Illuminate\\Database\\Eloquent\\Model",
+            "function": "App\\Providers\\{closure}",
+            "class": "App\\Providers\\RouteServiceProvider",
             "type": "->"
         },
         {
             "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 798,
-            "function": "resolveForRoute",
-            "class": "Illuminate\\Routing\\ImplicitRouteBinding",
-            "type": "::"
+            "line": 813,
+            "function": "call_user_func"
+        },
+        {
+            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 781,
+            "function": "performBinding",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
         },
         {
             "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
-            "line": 39,
-            "function": "substituteImplicitBindings",
+            "line": 37,
+            "function": "substituteBindings",
             "class": "Illuminate\\Routing\\Router",
             "type": "->"
         },
@@ -2098,45 +2055,24 @@ print_r(json_decode((string) $body));
 
 ### Request
 <small class="badge badge-darkblue">PUT</small>
- **`api/people/{person}`**
+ **`api/products/{product}`**
 
 <small class="badge badge-purple">PATCH</small>
- **`api/people/{person}`**
+ **`api/products/{product}`**
 
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-<code><b>preferred_name</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
+<code><b>name</b></code>&nbsp; <small>string</small>     <br>
     
 
-<code><b>first_name</b></code>&nbsp; <small>string</small>     <br>
+<code><b>barcode</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
     
 
-<code><b>middle_name</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>last_name</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>title</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>suffix</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>professional_title</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>preferred_language</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>date_of_birth</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
-    
-
-<code><b>person_type_id</b></code>&nbsp; <small>integer</small>         <i>optional</i>    <br>
+<code><b>sku</b></code>&nbsp; <small>string</small>         <i>optional</i>    <br>
     
 
 
 
-## Remove the specified person resource from storage.
+## Remove the specified resource from storage.
 
 
 
@@ -2145,14 +2081,14 @@ print_r(json_decode((string) $body));
 
 ```bash
 curl -X DELETE \
-    "http://127.0.0.1:8082/api/people/1" \
+    "http://127.0.0.1:8082/api/products/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8082/api/people/1"
+    "http://127.0.0.1:8082/api/products/1"
 );
 
 let headers = {
@@ -2173,7 +2109,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->delete(
-    'http://127.0.0.1:8082/api/people/1',
+    'http://127.0.0.1:8082/api/products/1',
     [
         'headers' => [
             'Content-Type' => 'application/json',
@@ -2190,7 +2126,7 @@ print_r(json_decode((string) $body));
 
 ```json
 {
-    "message": "SQLSTATE[08006] [7] FATAL:  password authentication failed for user \"andromeda\" (SQL: select * from \"people\" where \"id\" = 1 and \"people\".\"deleted_at\" is null limit 1)",
+    "message": "SQLSTATE[08006] [7] FATAL:  password authentication failed for user \"andromeda\" (SQL: select * from \"products\" where \"slug\" = 1 and \"products\".\"deleted_at\" is null limit 1)",
     "exception": "Illuminate\\Database\\QueryException",
     "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Database\/Connection.php",
     "line": 671,
@@ -2259,30 +2195,33 @@ print_r(json_decode((string) $body));
             "type": "->"
         },
         {
-            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Database\/Eloquent\/Model.php",
-            "line": 1569,
+            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/app\/Providers\/RouteServiceProvider.php",
+            "line": 44,
             "function": "first",
             "class": "Illuminate\\Database\\Eloquent\\Builder",
             "type": "->"
         },
         {
-            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ImplicitRouteBinding.php",
-            "line": 46,
-            "function": "resolveRouteBinding",
-            "class": "Illuminate\\Database\\Eloquent\\Model",
+            "function": "App\\Providers\\{closure}",
+            "class": "App\\Providers\\RouteServiceProvider",
             "type": "->"
         },
         {
             "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 798,
-            "function": "resolveForRoute",
-            "class": "Illuminate\\Routing\\ImplicitRouteBinding",
-            "type": "::"
+            "line": 813,
+            "function": "call_user_func"
+        },
+        {
+            "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 781,
+            "function": "performBinding",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
         },
         {
             "file": "\/Users\/seanshoffstall\/Code\/andromeda\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
-            "line": 39,
-            "function": "substituteImplicitBindings",
+            "line": 37,
+            "function": "substituteBindings",
             "class": "Illuminate\\Routing\\Router",
             "type": "->"
         },
@@ -2638,7 +2577,7 @@ print_r(json_decode((string) $body));
 
 ### Request
 <small class="badge badge-red">DELETE</small>
- **`api/people/{person}`**
+ **`api/products/{product}`**
 
 
 

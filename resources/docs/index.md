@@ -4,6 +4,7 @@ title:
 language_tabs:
 - bash
 - javascript
+- php
 
 includes:
 - "./prepend.md"
