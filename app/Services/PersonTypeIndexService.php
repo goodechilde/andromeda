@@ -17,7 +17,7 @@ class PersonTypeIndexService
                     ->allowedFilters([])
                     ->allowedSorts([])
                     ->allowedIncludes([])
-                    ->paginate(request()->query('per_page') ? : 20)
+                    ->paginate(request()->query('per_page') ? : (int) 20)
                     ->appends(request()->query() ? : '');
     }
 }
