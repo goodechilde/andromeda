@@ -17,7 +17,7 @@ class ProductOptionIndexService
                     ->allowedFilters([])
                     ->allowedSorts([])
                     ->allowedIncludes([])
-                    ->paginate()
-                    ->appends(request()->query());
+                    ->paginate(request()->query('per_page') ? : 20)
+                    ->appends(request()->query() ? : '');
     }
 }

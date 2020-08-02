@@ -14,6 +14,13 @@ class ProductOptionResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'key' => $this->key,
+            'field_type' => $this->field_type,
+            'options' => $this->options,
+            'validation' => $this->validation,
+            'external_id' => $this->external_id,
+            'slug' => $this->slug,
+        ];
     }
 }

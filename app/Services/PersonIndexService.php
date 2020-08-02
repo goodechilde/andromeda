@@ -17,7 +17,8 @@ class PersonIndexService
                     ->allowedFilters(['id','first_name','last_name'])
                     ->allowedSorts(['id','first_name','last_name'])
                     ->allowedIncludes(['addresses','emailaddresses','phones','socialmediaaddresses','notes','tags'])
-                    ->paginate()
+                    ->paginate(request()->query('per_page') ? : 20)
                     ->appends(request()->query() ? : '');
     }
 }
+

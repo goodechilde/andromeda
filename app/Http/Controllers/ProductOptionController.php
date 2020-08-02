@@ -55,10 +55,9 @@ class ProductOptionController extends Controller
      * @return ProductOptionResource
      */
     public function store(
-            ProductOptionStoreRequest $request,
-            ProductOptionStoreService $service
-        ): ProductOptionResource
-    {
+        ProductOptionStoreRequest $request,
+        ProductOptionStoreService $service
+    ): ProductOptionResource {
         $product_option = $service->handle($request);
         return new ProductOptionResource(
             $product_option
@@ -87,11 +86,10 @@ class ProductOptionController extends Controller
      * @return ProductOptionResource
      */
     public function update(
-            ProductOptionUpdateRequest $request,
-            ProductOptionUpdateService $service,
-            ProductOption $product_option
-        ): ProductOptionResource
-    {
+        ProductOptionUpdateRequest $request,
+        ProductOptionUpdateService $service,
+        ProductOption $product_option
+    ): ProductOptionResource {
         $product_option = $service->handle($product_option, $request);
         return new ProductOptionResource(
             $product_option
@@ -102,7 +100,9 @@ class ProductOptionController extends Controller
      * Remove the specified dummyModel resource from storage.
      *
      * @param ProductOption $product_option
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     *
+     * @return Response
+     *
      * @throws \Exception
      */
     public function destroy(ProductOption $product_option): Response

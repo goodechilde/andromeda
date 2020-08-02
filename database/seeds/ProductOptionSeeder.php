@@ -13,7 +13,7 @@ class ProductOptionSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\ProductOption::class, 25)->create();
+        factory(App\ProductOption::class, 100)->create();
 
         Permission::create(['name' => 'view product_options']);
         Permission::create(['name' => 'viewAny product_options']);

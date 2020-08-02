@@ -18,12 +18,17 @@ class Product extends Model
 
     protected $guarded = [ 'id' ];
     protected $uuidFieldName = 'external_id';
-    protected $with = ['productType'];
+    protected $with = ['productType', 'productOptions'];
     //
 
     public function productType()
     {
         return $this->hasOne(ProductType::class, 'id', 'product_types_id');
+    }
+
+    public function productOptions()
+    {
+        return $this->hasMany(ProductOption::class);
     }
     /**
      * Get the options for generating the slug.

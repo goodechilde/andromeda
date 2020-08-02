@@ -20,6 +20,7 @@ class CreateProductOptionsTable extends Migration
             $table->string('options')->nullable();
             $table->string('validation')->nullable();
             $table->uuid('external_id');
+            $table->string('slug');
             $table->foreignId('product_id');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();

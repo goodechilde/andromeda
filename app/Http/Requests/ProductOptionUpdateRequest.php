@@ -48,5 +48,4 @@ class ProductOptionUpdateRequest extends FormRequest
             ], Response::HTTP_UNPROCESSABLE_ENTITY),
         );
     }
-
 }

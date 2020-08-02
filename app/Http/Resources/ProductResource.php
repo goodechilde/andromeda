@@ -24,6 +24,7 @@ class ProductResource extends JsonResource
             'updated_at' => $this->updated_at,
             'updated_by' => $this->editor->name,
             'product_type' => new ProductTypeResource($this->productType),
+            'product_options' => ProductOptionResource::collection($this->whenLoaded('productOptions')),
         ];
     }
 }
