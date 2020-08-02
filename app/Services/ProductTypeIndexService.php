@@ -17,7 +17,7 @@ class ProductTypeIndexService
                     ->allowedFilters([])
                     ->allowedSorts([])
                     ->allowedIncludes([])
-                    ->paginate(request()->query('per_page') ? : (int) 20)
+                    ->paginate(request()->query('per_page'))
                     ->appends(request()->query() ? : '');
     }
 }
