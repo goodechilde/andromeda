@@ -16,7 +16,7 @@
         "goodechilde/gc-notes": "dev-master",
         "goodechilde/gc-tags": "dev-master",
         "guzzlehttp/guzzle": "^7.0",
-        "laravel/framework": "^7.0",
+        "laravel/framework": "^7.28",
         "laravel/helpers": "^1.2",
         "laravel/passport": "^9.3",
         "laravel/telescope": "^3.5",
